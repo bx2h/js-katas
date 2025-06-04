@@ -1,7 +1,11 @@
-JS / React / Typscript code katas for practice
+# JS / React / Typscript code katas for practice
 
-Install:
+[![Tests](https://github.com/bx2h/js-katas/actions/workflows/run-tests.yaml/badge.svg)](https://github.com/bx2h/js-katas/actions)
+
+## Install
+
 `pnpm install`
 
-Run tests:
+## Run tests
+
 `pnpm test`
