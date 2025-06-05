@@ -9,3 +9,7 @@
 ## Run tests
 
 `pnpm test`
+
+## Katas
+
+Can be found in the ![scripts](./scripts/) folder
