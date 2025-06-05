@@ -56,6 +56,8 @@ const createBinaryTree = function (
     return [nodeP, nodeQ]
 }
 
+// Time: O(n) as we will need to visit every node in the tree if the nodes are at the bottom of a skewed tree
+// Space: O(n) as we store every node in the map
 const lowestCommonAncestor = function (
     p: Node | undefined,
     q: Node | undefined
@@ -85,6 +87,8 @@ const lowestCommonAncestor = function (
     return null
 }
 
+// Time: O(n) up to 2n steps to align nodes p and q
+// Space: O(1) as we only store local nodes
 const lowestCommonAncestorRunner = function (p: Node, q: Node) {
     let nodeA: Node | undefined = p
     let nodeB: Node | undefined = q
