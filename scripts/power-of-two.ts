@@ -1,3 +1,5 @@
+// Given an array arr, return a new array where all values in arr are squared
+
 // Time: O(n)
 // Space: O(n)
 const powerOfTwo = (arr: number[]): number[] => {

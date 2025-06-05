@@ -1,3 +1,5 @@
+// Given two sparse vectors (a sparse vector contains mostly zeros) calculate the dot product of them
+
 // Time: O(n) worst case
 // O(n) - for constructor
 // O(L) where L is number of non-zero elements
@@ -85,8 +87,3 @@ AltSparseVector.prototype.dotProduct = function (vec: AltSparseVectorInstance) {
 }
 
 export { SparseVector, AltSparseVector }
-
-// Your SparseVector object will be instantiated and called as such:
-// let v1 = new SparseVector(nums1);
-// let v2 = new SparseVector(nums2);
-// let ans = v1.dotProduct(v2);

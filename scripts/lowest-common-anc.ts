@@ -1,3 +1,5 @@
+// Find the lowest common ancestor of two nodes in a binary tree
+
 interface Node {
     val: number
     left?: Node

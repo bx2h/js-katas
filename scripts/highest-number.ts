@@ -1,3 +1,5 @@
+// Given an array of integers, return the largest number
+
 // Time: O(n) due to Math.max iterating through n length
 // Space: O(n) due to spread operator
 const highestNumber = (arr: number[]): number => {
