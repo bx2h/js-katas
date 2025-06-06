@@ -1,5 +1,5 @@
 const debounce = function (func, wait = 0) {
-    let handle: NodeJS.Timeout
+    let handle
 
     return function (...args) {
         clearTimeout(handle)
