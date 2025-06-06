@@ -16,4 +16,4 @@ console.log(me, obj.me) // { name: 'bx2h' } someone else
 me.name = 'another person'
 console.log(me, obj.me) // { name: 'another person' } someone else
 
-// hoisting
+// TODO hoisting
