@@ -1,38 +1,74 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import ProgressBarKata from './components/ProgressBar/ProgressBarKata'
 import './App.css'
 
+type KataPage = 'home' | 'progress-bar'
+
+interface Kata {
+    id: KataPage
+    title: string
+    description: string
+    component: React.ComponentType
+}
+
+const katas: Kata[] = [
+    {
+        id: 'progress-bar',
+        title: 'Progress Bar',
+        description:
+            'A customizable progress bar component with different progress values',
+        component: ProgressBarKata,
+    },
+]
+
 function App() {
-    const [count, setCount] = useState(0)
+    const [currentPage, setCurrentPage] = useState<KataPage>('home')
+
+    const renderKataList = () => (
+        <div className="kata-container">
+            <h1>React Katas</h1>
+
+            <div className="kata-grid">
+                {katas.map((kata) => (
+                    <div key={kata.id} className="kata-card">
+                        <h3>{kata.title}</h3>
+                        <p>{kata.description}</p>
+                        <button
+                            className="kata-button"
+                            onClick={() => setCurrentPage(kata.id)}
+                        >
+                            Try it out →
+                        </button>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+
+    const renderKataPage = () => {
+        const kata = katas.find((k) => k.id === currentPage)
+        if (!kata) return null
+
+        const KataComponent = kata.component
+
+        return (
+            <div className="kata-page">
+                <button
+                    className="back-button"
+                    onClick={() => setCurrentPage('home')}
+                >
+                    ← Back to Katas
+                </button>
+                <h2>{kata.title}</h2>
+                <KataComponent />
+            </div>
+        )
+    }
 
     return (
-        <>
-            <div>
-                <a href="https://vite.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img
-                        src={reactLogo}
-                        className="logo react"
-                        alt="React logo"
-                    />
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
-        </>
+        <div className="app">
+            {currentPage === 'home' ? renderKataList() : renderKataPage()}
+        </div>
     )
 }
 
