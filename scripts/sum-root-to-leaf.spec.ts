@@ -9,7 +9,7 @@ describe('Sum root to leaf nodes', () => {
         expect(sumNumbers(root)).toEqual(25)
     })
 
-    it('Test 1', () => {
+    it('Test 2', () => {
         const nodes = [4, 9, 0, 5, 1]
         const root = createBinaryTree(nodes)
         expect(sumNumbers(root)).toEqual(1026)
