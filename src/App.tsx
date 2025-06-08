@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import ProgressBarKata from './components/ProgressBar/ProgressBarKata'
+import ImageCarouselKata from './components/ImageCarousel/ImageCarouselKata'
 import './App.css'
 
-type KataPage = 'home' | 'progress-bar'
-
 interface Kata {
-    id: KataPage
+    id: string
     title: string
     description: string
     component: React.ComponentType
@@ -19,10 +18,16 @@ const katas: Kata[] = [
             'A customizable progress bar component with different progress values',
         component: ProgressBarKata,
     },
+    {
+        id: 'image-carousel',
+        title: 'Image Carousel',
+        description: 'An image carousel with left / right and page navigation',
+        component: ImageCarouselKata,
+    },
 ]
 
 function App() {
-    const [currentPage, setCurrentPage] = useState<KataPage>('home')
+    const [currentPage, setCurrentPage] = useState<string>('home')
 
     const renderKataList = () => (
         <div className="kata-container">
