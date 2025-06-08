@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { NestedInteger, depthSum } from './nested-list-depth-sum'
+import { depthSum } from './nested-list-depth-sum'
+import { NestedInteger } from './utils'
 
 describe('Nested List Depth Sum', () => {
     it('Test 1', () => {

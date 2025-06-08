@@ -59,4 +59,51 @@ const createBinaryTree = function (
     return nodes[0]!
 }
 
-export { Node, createBinaryTree }
+interface INestedInteger {
+    isInteger: () => boolean
+    getInteger: () => number | undefined
+    setInteger: (value: number) => void
+    add: (elem: INestedInteger) => void
+    getList: () => INestedInteger[] | undefined
+}
+
+class NestedInteger implements INestedInteger {
+    private val: number | INestedInteger[] | null
+
+    constructor(input) {
+        this.val = null
+
+        if (Array.isArray(input)) {
+            for (const item of input) {
+                this.add(new NestedInteger(item))
+            }
+        } else if (input !== undefined) {
+            this.setInteger(input)
+        }
+    }
+
+    isInteger(): boolean {
+        return typeof this.val === 'number'
+    }
+
+    getInteger(): number | undefined {
+        return this.isInteger() ? (this.val as number) : undefined
+    }
+
+    setInteger(value: number): void {
+        this.val = value
+    }
+
+    add(elem: INestedInteger): void {
+        if (this.val === null) {
+            this.val = []
+        }
+        ;(this.val as INestedInteger[]).push(elem)
+    }
+
+    getList(): INestedInteger[] | undefined {
+        return this.isInteger() ? undefined : (this.val as INestedInteger[])
+    }
+}
+
+export { Node, createBinaryTree, NestedInteger, INestedInteger }
