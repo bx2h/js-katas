@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import ProgressBarKata from './components/ProgressBar/ProgressBarKata'
 import ImageCarouselKata from './components/ImageCarousel/ImageCarouselKata'
+import JobBoardKata from './components/JobBoard/JobBoardKata'
+
 import './App.css'
 
 interface Kata {
@@ -23,6 +25,13 @@ const katas: Kata[] = [
         title: 'Image Carousel',
         description: 'An image carousel with left / right and page navigation',
         component: ImageCarouselKata,
+    },
+    {
+        id: 'job-board',
+        title: 'Job Board',
+        description:
+            'API fetch from Hacker News Jobs and display them in a list + laod more button',
+        component: JobBoardKata,
     },
 ]
 
