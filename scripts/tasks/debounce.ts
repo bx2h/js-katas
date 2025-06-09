@@ -1,7 +1,6 @@
 const debounce = function (func, wait = 0) {
     let handle
-
-    return function (...args) {
+    return (...args) => {
         clearTimeout(handle)
 
         handle = setTimeout(() => {
