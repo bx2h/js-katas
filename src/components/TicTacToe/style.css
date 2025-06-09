@@ -1,0 +1,45 @@
+.tictactoe {
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.tictactoe h2.tictactoe__status {
+    font-size: 16px;
+    color: black;
+    -webkit-text-fill-color: unset;
+}
+
+.tictactoe__board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.board__row {
+    display: flex;
+}
+
+.board__cell {
+    font-size: 60px;
+    text-align: center;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.board__reset {
+    border: 1px solid black;
+    padding: 5px 20px;
+    font-size: 22px;
+    background-color: white;
+    border-radius: 8px;
+    margin: 15px auto;
+    color: black;
+}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ProgressBarKata from './components/ProgressBar/ProgressBarKata'
 import ImageCarouselKata from './components/ImageCarousel/ImageCarouselKata'
 import JobBoardKata from './components/JobBoard/JobBoardKata'
+import TicTacToe from './components/TicTacToe/TicTacToe'
 
 import './App.css'
 
@@ -32,6 +33,12 @@ const katas: Kata[] = [
         description:
             'API fetch from Hacker News Jobs and display them in a list + laod more button',
         component: JobBoardKata,
+    },
+    {
+        id: 'tic-tac-toe',
+        title: 'Tic Tac Toe',
+        description: 'A 2 player game of Tic Tac Toe',
+        component: TicTacToe,
     },
 ]
 
