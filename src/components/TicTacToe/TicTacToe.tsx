@@ -10,6 +10,7 @@ export default function App() {
 
     useEffect(() => {
         reset()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
