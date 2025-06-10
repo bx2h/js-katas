@@ -5,6 +5,7 @@ import JobBoardKata from './components/JobBoard/JobBoardKata'
 import TicTacToe from './components/TicTacToe/TicTacToe'
 
 import './App.css'
+import WordleKata from './components/Wordle/WordleKata'
 
 interface Kata {
     id: string
@@ -39,6 +40,12 @@ const katas: Kata[] = [
         title: 'Tic Tac Toe',
         description: 'A 2 player game of Tic Tac Toe',
         component: TicTacToe,
+    },
+    {
+        id: 'wordle',
+        title: 'Wordle',
+        description: 'Wordle game',
+        component: WordleKata,
     },
 ]
 
